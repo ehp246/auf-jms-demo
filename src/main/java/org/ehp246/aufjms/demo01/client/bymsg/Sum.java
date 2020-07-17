@@ -8,7 +8,7 @@ import org.ehp246.aufjms.api.annotation.ByMsg;
  * @author Lei Yang
  *
  */
-@ByMsg("")
+@ByMsg("queue://demo01.server.caculator.request.queue")
 public interface Sum {
 	int sum(List<Integer> integers);
 }
