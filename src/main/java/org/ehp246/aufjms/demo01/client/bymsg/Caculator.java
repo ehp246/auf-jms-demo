@@ -9,6 +9,8 @@ import org.ehp246.aufjms.api.annotation.ByMsg;
  *
  */
 @ByMsg("queue://demo01.server.caculator.request.queue")
-public interface Sum {
+public interface Caculator {
 	int sum(List<Integer> integers);
+
+	void submitSumJob(List<Integer> integers);
 }
