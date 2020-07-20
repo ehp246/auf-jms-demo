@@ -8,7 +8,7 @@ import org.ehp246.aufjms.api.annotation.ByMsg;
  * @author Lei Yang
  *
  */
-@ByMsg("queue://demo01.server.caculator.request.queue")
+@ByMsg("${caculator.request}")
 public interface ServerTime {
 	Instant getNow();
 }
