@@ -1,21 +1,22 @@
-package org.ehp246.aufjms;
+package in.ehp246.aufjms;
 
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.IntStream;
 
-import org.ehp246.aufjms.demo01.client.ApiApplication;
-import org.ehp246.aufjms.demo01.client.bymsg.Collector;
-import org.ehp246.aufjms.demo01.client.controller.CaculatorController;
-import org.ehp246.aufjms.demo01.client.controller.CollectorController;
-import org.ehp246.aufjms.demo01.client.controller.ServerTimeController;
-import org.ehp246.aufjms.demo01.server.ServerApplication;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
 import org.springframework.boot.test.context.SpringBootTest;
+
+import in.ehp246.aufjms.demo01.client.ApiApplication;
+import in.ehp246.aufjms.demo01.client.bymsg.Collector;
+import in.ehp246.aufjms.demo01.client.controller.CaculatorController;
+import in.ehp246.aufjms.demo01.client.controller.CollectorController;
+import in.ehp246.aufjms.demo01.client.controller.ServerTimeController;
+import in.ehp246.aufjms.demo01.server.ServerApplication;
 
 /**
  * @author Lei Yang

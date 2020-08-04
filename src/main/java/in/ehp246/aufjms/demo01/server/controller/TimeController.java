@@ -1,15 +1,16 @@
-package org.ehp246.aufjms.demo01.server.controller;
+package in.ehp246.aufjms.demo01.server.controller;
 
 import java.time.Instant;
 
-import org.ehp246.aufjms.api.annotation.ForMsg;
-import org.ehp246.aufjms.api.annotation.Invoking;
-import org.ehp246.aufjms.api.endpoint.InstanceScope;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import in.ehp246.aufjms.api.annotation.ForMsg;
+import in.ehp246.aufjms.api.annotation.Invoking;
+import in.ehp246.aufjms.api.endpoint.InstanceScope;
 
 /**
  * @author Lei Yang

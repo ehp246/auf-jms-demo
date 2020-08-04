@@ -1,10 +1,10 @@
-package org.ehp246.aufjms.demo01.client.bymsg;
+package in.ehp246.aufjms.demo01.client.bymsg;
 
 import java.time.Instant;
 import java.util.List;
 
-import org.ehp246.aufjms.api.annotation.ByMsg;
-import org.ehp246.aufjms.api.annotation.CollectionOf;
+import in.ehp246.aufjms.api.annotation.ByMsg;
+import in.ehp246.aufjms.api.annotation.CollectionOf;
 
 /**
  * @author Lei Yang

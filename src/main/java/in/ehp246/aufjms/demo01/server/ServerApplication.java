@@ -1,11 +1,12 @@
-package org.ehp246.aufjms.demo01.server;
+package in.ehp246.aufjms.demo01.server;
 
-import org.ehp246.aufjms.api.annotation.EnableForMsg;
-import org.ehp246.aufjms.api.annotation.EnableForMsg.At;
-import org.ehp246.aufjms.demo01.server.controller.TimeController;
-import org.ehp246.aufjms.demo01.server.formsg.Caculator;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import in.ehp246.aufjms.api.annotation.EnableForMsg;
+import in.ehp246.aufjms.api.annotation.EnableForMsg.At;
+import in.ehp246.aufjms.demo01.server.controller.TimeController;
+import in.ehp246.aufjms.demo01.server.formsg.Caculator;
 
 /**
  * @author Lei Yang

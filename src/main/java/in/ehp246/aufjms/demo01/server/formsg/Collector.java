@@ -1,15 +1,16 @@
-package org.ehp246.aufjms.demo01.server.formsg;
+package in.ehp246.aufjms.demo01.server.formsg;
 
 import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.ehp246.aufjms.api.annotation.ForMsg;
-import org.ehp246.aufjms.api.annotation.Invoking;
-import org.ehp246.aufjms.api.endpoint.InstanceScope;
-import org.ehp246.aufjms.api.endpoint.InvocationModel;
 import org.springframework.stereotype.Service;
+
+import in.ehp246.aufjms.api.annotation.ForMsg;
+import in.ehp246.aufjms.api.annotation.Invoking;
+import in.ehp246.aufjms.api.endpoint.InstanceScope;
+import in.ehp246.aufjms.api.endpoint.InvocationModel;
 
 /**
  * This class by itself is not thread-safe. It can not be executed by multiple

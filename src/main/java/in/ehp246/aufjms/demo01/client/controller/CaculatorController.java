@@ -1,8 +1,7 @@
-package org.ehp246.aufjms.demo01.client.controller;
+package in.ehp246.aufjms.demo01.client.controller;
 
 import java.util.ArrayList;
 
-import org.ehp246.aufjms.demo01.client.bymsg.Caculator;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +10,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import in.ehp246.aufjms.demo01.client.bymsg.Caculator;
 
 /**
  * @author Lei Yang

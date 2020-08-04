@@ -1,11 +1,12 @@
-package org.ehp246.aufjms.demo01.server.formsg;
+package in.ehp246.aufjms.demo01.server.formsg;
 
 import java.util.List;
 
-import org.ehp246.aufjms.api.annotation.ForMsg;
-import org.ehp246.aufjms.api.annotation.Invoking;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import in.ehp246.aufjms.api.annotation.ForMsg;
+import in.ehp246.aufjms.api.annotation.Invoking;
 
 /**
  * @author Lei Yang

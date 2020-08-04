@@ -1,14 +1,15 @@
-package org.ehp246.aufjms.demo01.client.controller;
+package in.ehp246.aufjms.demo01.client.controller;
 
 import java.time.Instant;
 
-import org.ehp246.aufjms.demo01.client.bymsg.Collector;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import in.ehp246.aufjms.demo01.client.bymsg.Collector;
 
 /**
  * @author Lei Yang
