@@ -1,23 +1,53 @@
-package in.ehp246.aufjms.demo01.server;
+package me.ehp246.aufjmsdemo;
 
+import javax.jms.ConnectionFactory;
+
+import org.apache.qpid.jms.JmsConnectionFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
+import org.springframework.jms.connection.SingleConnectionFactory;
 
-import in.ehp246.aufjms.api.annotation.EnableForMsg;
-import in.ehp246.aufjms.api.annotation.EnableForMsg.At;
-import in.ehp246.aufjms.demo01.server.controller.TimeController;
-import in.ehp246.aufjms.demo01.server.formsg.Caculator;
+import com.fasterxml.jackson.annotation.JsonInclude.Include;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
+import com.fasterxml.jackson.module.mrbean.MrBeanModule;
+import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
+
+import me.ehp246.aufjms.api.annotation.EnableByJms;
+import me.ehp246.aufjms.api.annotation.EnableForJms;
+import me.ehp246.aufjms.api.annotation.EnableForJms.Inbound;
+import me.ehp246.aufjms.api.annotation.EnableForJms.Inbound.From;
 
 /**
  * @author Lei Yang
  *
  */
 @SpringBootApplication
-@EnableForMsg(@At(value = "${caculator.request}", scan = { Caculator.class, TimeController.class }))
-public class ServerApplication {
+@EnableByJms
+@EnableForJms(@Inbound(@From("${aufjmsdemo.inbox}")))
+public class AufJmsDemoApplication {
+    public static final ObjectMapper OBJECT_MAPPER = new ObjectMapper().setSerializationInclusion(Include.NON_NULL)
+            .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false).registerModule(new JavaTimeModule())
+            .disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS).registerModule(new MrBeanModule())
+            .registerModule(new ParameterNamesModule());
 
-	public static void main(final String[] args) {
-		SpringApplication.run(ServerApplication.class, args);
-	}
+    public static void main(final String[] args) {
+        SpringApplication.run(AufJmsDemoApplication.class, args);
+    }
 
+    @Bean
+    public ConnectionFactory jmsConnectionFactoryQpid(@Value("${aufjmsdemo.broker.url}") final String url,
+            @Value("${aufjmsdemo.broker.username}") final String username,
+            @Value("${aufjmsdemo.broker.password}") final String password) {
+        return new SingleConnectionFactory(new JmsConnectionFactory(username, password, url));
+    }
+
+    @Bean
+    ObjectMapper objectMapper() {
+        return OBJECT_MAPPER;
+    }
 }

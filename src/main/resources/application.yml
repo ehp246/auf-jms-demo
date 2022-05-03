@@ -1,3 +1,5 @@
-spring.activemq.broker-url=tcp://localhost:61616
-
-caculator.request=queue://demo01.server.caculator.request.queue
+logging:
+  config: classpath:log4j.xml
+spring:
+  artemis:
+    mode: embedded
