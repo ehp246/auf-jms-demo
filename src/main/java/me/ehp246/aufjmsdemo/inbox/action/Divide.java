@@ -10,14 +10,16 @@ import me.ehp246.aufjms.api.annotation.Invoking;
  * @author Lei Yang
  *
  */
-@ForJmsType("Sum")
-public class Sum {
+@ForJmsType("Divide")
+public class Divide {
     private static final Logger logger = LogManager.getLogger();
 
     @Invoking
-    public int sum(final int a, final int b) {
-        final var sum = a + b;
-        logger.info("Sum: " + sum);
-        return sum;
+    public float perform(final int a, final int b) {
+        final var div = (float) (a / b);
+
+        logger.info("Result: " + div);
+
+        return div;
     }
 }
