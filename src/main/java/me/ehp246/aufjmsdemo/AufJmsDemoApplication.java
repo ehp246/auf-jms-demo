@@ -1,7 +1,5 @@
 package me.ehp246.aufjmsdemo;
 
-import javax.jms.ConnectionFactory;
-
 import org.apache.qpid.jms.JmsConnectionFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
@@ -17,6 +15,7 @@ import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.fasterxml.jackson.module.mrbean.MrBeanModule;
 import com.fasterxml.jackson.module.paramnames.ParameterNamesModule;
 
+import jakarta.jms.ConnectionFactory;
 import me.ehp246.aufjms.api.annotation.EnableByJms;
 import me.ehp246.aufjms.api.annotation.EnableForJms;
 import me.ehp246.aufjms.api.annotation.EnableForJms.Inbound;
